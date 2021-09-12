@@ -120,7 +120,7 @@ class db {
         }
     }
 
-    public function sql($sql="", $binds=[]) {
+    public function sql($sql="", $binds=[], $select=true) {
         $result = [];
 
         $this->sqlQuery($sql);
@@ -130,11 +130,16 @@ class db {
         }
 
         $dbResult = $this->sqlExecute();
-        while($row =  $dbResult->fetch(PDO::FETCH_OBJ)) {
-            $result[] = $row;
+
+        if($select){
+            while($row =  $dbResult->fetch(PDO::FETCH_OBJ)) {
+                $result[] = $row;
+            }
+            return $result;
+        }else{
+            return $dbResult;
         }
 
-        return $result;
     }
 
 }
