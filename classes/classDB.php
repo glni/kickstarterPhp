@@ -112,8 +112,7 @@ class db {
                 $output .= "<strong>Stack trace:</strong><pre>".$e->getTraceAsString()."</pre>";
                 $output .= "<strong>Last SQL query:</strong><br><code>" . $this->lastQuery . "</code><br>";
             } else {
-                $output = "An error has occurred in the database. We received information about the error. If the error persists, contact us for the status of the bug.<br><br>We will fix the error as soon as possible so that you do not experience this again. We are sorry for the inconvenience it has caused.";
-                $error = "Error in query<br><br>".print_r($this->prepare_result->errorInfo(), true)."<br><br>Last SQL query:".$this->lastQuery;
+                $output = "An error has occurred in the database.";
             }
             echo $output;
             exit;
