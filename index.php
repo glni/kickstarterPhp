@@ -17,7 +17,7 @@ require "settings/init.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body
+<body>
 <div class="row g-2">
 	<?php
 	$produkter = $db->sql("SELECT * FROM produkter");
