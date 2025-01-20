@@ -1,8 +1,25 @@
-# Kickstarter projekt med PHP
+# Kickstarter
 
 Download projektet som ZIP-fil
 
-- Åben projektet og kør kommandoen "npm install" i terminalen
-- Kør "sass" kommandoen fra npm scripts.
-  
-Du kan find npm scripts ved at dobbeltrykke på shift, på dit tastatur og søge. Alternativt kan du skrive "npm run sass" i terminalen
+
+# Første gang
+Du åbner projektet kør denne kommando
+```sh
+npm run setup
+```
+Setup kommandoen kører "npm install", "npm run sass" og "npm run docker:start" på én gang.
+
+I package.json filen kan du under "scripts" finde sass kommandoen alene.
+Du kan også kører den herfra:
+
+
+# Fremover
+Behøver du kun at kører disse 2 kommandoer
+```sh
+npm run sass
+```
+
+```sh
+npm run docker:start
+```

@@ -2,7 +2,6 @@
 require "classes/classDB.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED & ~E_STRICT);
 
 /*
  * Guide
@@ -25,25 +24,31 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED & ~E_STRICT);
  *
  * GENERELT
  * $DB_NAME skal rettes til det din database for dette projekt hedder. Databasen er den du opretter i PHPMyAdmin
- *
  */
-define("CONFIG_LIVE", "0"); // 0: Test enviroment || 1: Live enviroment || 2: Docker
+
+
+/*
+!! Hvis du bruger WAMP eller MAMP !!
+Brug nedenstående variabler der hvor CONFIG_LIVE == 0
+
+$DB_SERVER = "localhost";
+$DB_NAME = "test";
+$DB_USER = "root";
+$DB_PASS = "";
+*/
+
+define("CONFIG_LIVE", "0"); // 0: Test enviroment || 1: Live enviroment
 
 if(CONFIG_LIVE == 0) {
-    $DB_SERVER = "localhost";
-    $DB_NAME = "test";
-    $DB_USER = "root";
-    $DB_PASS = "";
+    $DB_SERVER = "mariadb";
+    $DB_NAME = "webshop";
+    $DB_USER = "user";
+    $DB_PASS = "password";
 } else if(CONFIG_LIVE == 1) {
     $DB_SERVER = "";
     $DB_NAME = "";
     $DB_USER = "";
     $DB_PASS = "";
-} else if(CONFIG_LIVE == 2) {
-    $DB_SERVER = "mariadb-standard";
-    $DB_NAME = "webshop";
-    $DB_USER = "user";
-    $DB_PASS = "secretPassword";
 }
 
 $db = new db($DB_SERVER, $DB_NAME, $DB_USER, $DB_PASS);
