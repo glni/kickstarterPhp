@@ -1,7 +1,6 @@
 services:
 
   apache-php:
-    container_name: apache-php
     build:
       dockerfile: _docker/php/Dockerfile
     ports:
@@ -17,7 +16,6 @@ services:
       - app-network
 
   mariadb:
-    container_name: mariadb
     image: mariadb:latest
     restart: always
     volumes:
@@ -29,7 +27,6 @@ services:
       - app-network
 
   phpmyadmin:
-    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
     ports:
       - "8080:80"
