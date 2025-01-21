@@ -3,7 +3,6 @@ services:
   apache-php:
     container_name: apache-php
     build:
-      context: .
       dockerfile: _docker/php/Dockerfile
     ports:
       - "80:80"
