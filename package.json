@@ -6,8 +6,7 @@
   "scripts": {
     "setup": "npm install && npm-run-all --parallel sass docker:start",
     "sass": "sass --watch --update --style=compressed css:css",
-    "docker:start": "docker-compose -f docker-compose.yml up --build",
-    "docker:stop": "docker-compose -f docker-compose.yml down"
+    "docker:start": "docker-compose -f docker-compose.yml up --build"
   },
   "author": "",
   "license": "ISC",
