@@ -19,7 +19,7 @@ services:
     image: mariadb:latest
     restart: always
     volumes:
-      - ./_docker/mariadb/db:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
       - ./_docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
     env_file:
       - ./_docker/.env
