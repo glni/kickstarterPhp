@@ -141,5 +141,9 @@ class db {
 
     }
 
+    public function insertId() {
+        return $this->dbcon->lastInsertId();
+    }
+
 }
 ?>
