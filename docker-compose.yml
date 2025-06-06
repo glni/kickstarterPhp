@@ -3,6 +3,7 @@ services:
   apache-php:
     build:
       dockerfile: _docker/php/Dockerfile
+    restart: no
     ports:
       - "80:80"
     volumes:
@@ -17,7 +18,7 @@ services:
 
   mariadb:
     image: mariadb:latest
-    restart: always
+    restart: no
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./_docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -28,6 +29,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
+    restart: no
     ports:
       - "8080:80"
     depends_on:
